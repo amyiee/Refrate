@@ -1,0 +1,37 @@
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+/*Body*/
+body{background: #FFF;}
+.nav > li > a:hover, .nav > li > a:focus{background: transparent;}
+.container{margin-left: 1px;}
+.news{list-style: none;}
+.load-button{background: #f5f3f3;
+	font-size: .95em;
+	text-transform:uppercase;
+	border:none;
+	padding: 5px;
+	border-bottom: solid 2px #cfcfcf;
+	border-right: solid 2px #cfcfcf;
+		text-decoration:none;
+	color:#28716D;
+	font-weight:bold;
+   -moz-border-radius: .5em; 
+   -webkit-border-radius: .5em; 
+   -webkit-box-shadow: .2em .2em #f5f5f5;
+	color:#599692;  }
+footer{margin-top: 10px;}
+
+
+
+
+
+
+
+
+
+
+
