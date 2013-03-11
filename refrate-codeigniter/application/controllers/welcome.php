@@ -19,7 +19,7 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{	
-		$query = $this -> referee_model -> get_records();
+		$query = $this -> referee_model -> get_records_by_id(1);
 		$data['records'] = $query;
 		$this->load->view('ref',$data);
 
