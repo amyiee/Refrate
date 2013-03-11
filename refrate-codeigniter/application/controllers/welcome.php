@@ -18,8 +18,10 @@ class Welcome extends CI_Controller {
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
 	public function index()
-	{
-		$this->load->view('ref');
+	{	
+		$query = $this -> referee_model -> get_records();
+		$data['records'] = $query;
+		$this->load->view('ref',$data);
 
 		
 	}

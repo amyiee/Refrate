@@ -51,23 +51,27 @@
         	<section>
 	                <article>
 		              <figure class="span3" id="photoFrame"><img src="/refrate-codeigniter/application/views/css/images/webb.jpg" width="150" height="150" id="photo" alt="Howard Webb" title="Howard Webb"></figure>
+		              <?php foreach($records as $row):?>
 		              <div class="span3 referee_details">
 		                  <h2>FULL NAME</h2>
-		                  <p>Howard Webb</p>
+		                  <p><?php echo $row ->ref_name;?></p>
 		                  <!-- birth info -->
 		                  <h2>DATE OF BIRTH</h2> 
-		                  <p>13.11.1987</p>
+		                  <p><?php echo $row ->ref_DOB;?></p>
 		          
 		                  <h2>NATIONALITY</h2>
-		                  <p>United Kingdom</p>
+		                  <p><?php echo $row ->ref_nationality;?></p>
 		      
 		                  <h2>DAY JOB</h2> 
 		                  <!--<p>Police Office</p>-->
-						  <p>Sells shirts at ManUtd fanshop</p>
+						  <p><?php echo $row ->ref_job;?></p>
+						  <?php endforeach;?>
+						  
 		      
 		                  <h2>LEAGUE</h2> 
 		                  <p>UEFA Champions League, FIFA World Cup 2010, English Premier League</p>
 		              </div>
+		             
 		             </article>
 	              <div class="clear"></div>
 	              <div class="divider"></div>
