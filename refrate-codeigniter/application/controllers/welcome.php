@@ -26,10 +26,13 @@ class Welcome extends CI_Controller {
 		
 	}
 	
-	public function test()
+	public function referee($referee_id)
 	{
-		echo('test');
+		$query = $this -> referee_model -> get_records_by_id($referee_id);
+		$data['records'] = $query;
+		$this->load->view('ref',$data);
 	}
+	
 }
 
 /* End of file welcome.php */
