@@ -51,26 +51,34 @@
         	<section>
 	                <article>
 		              <figure class="span3" id="photoFrame"><img src="/refrate-codeigniter/application/views/css/images/webb.jpg" width="150" height="150" id="photo" alt="Howard Webb" title="Howard Webb"></figure>
-		              <?php foreach($records as $row):?>
+		             
 		              <div class="span3 referee_details">
-		                  <h2>FULL NAME</h2>
-		                  <p><?php echo $row ->ref_name;?></p>
-		                  <!-- birth info -->
-		                  <h2>DATE OF BIRTH</h2> 
-		                  <p><?php echo $row ->ref_DOB;?></p>
-		          
-		                  <h2>NATIONALITY</h2>
-		                  <p><?php echo $row ->ref_nationality;?></p>
-		      
-		                  <h2>DAY JOB</h2> 
-		                  <!--<p>Police Office</p>-->
-						  <p><?php echo $row ->ref_job;?></p>
-						  <?php endforeach;?>
-						  
-		      
-		                  <h2>LEAGUE</h2> 
-		                  <p>UEFA Champions League, FIFA World Cup 2010, English Premier League</p>
-		              </div>
+						  <?php						  
+						  foreach($records as $row){
+							  echo "<h2>FULL NAME</h2>
+								<p>". $row->ref_name ."</p>
+							  <h2>DATE OF BIRTH</h2> 
+								<p>". date("d-m-Y", strtotime($row->ref_DOB)) ."</p>
+							  <h2>NATIONALITY</h2>
+								<p>". $row->ref_nationality ."</p>
+							  <h2>DAY JOB</h2> 
+								<p>". $row->ref_job ."</p>		      
+							  <h2>LEAGUE</h2><p>";
+							  $counter = 0;
+							  foreach($leagues as $l){
+								if($counter == 0)
+									echo $l->league_name;
+								else
+									echo ", ".$l->league_name;
+								$counter++;
+							  }
+							  echo "</p>";
+							  
+							  $likes = $row->ref_total_likes;
+							  $dislikes = $row->ref_total_dislikes;
+						  }
+						  ?>
+					  </div>
 		             
 		             </article>
 	              <div class="clear"></div>
@@ -86,8 +94,6 @@
                   </section>
                   <section class="ratingTotal">
 					  <?php //Rating
-						  $likes = 256;
-						  $dislikes = 152;
 						  $percentage_l = $likes / ($likes+$dislikes) * 100;
 						  $percentage_d = $dislikes / ($likes+$dislikes) * 100;
 						  echo "<span class=\"ratingBarLikes\"><span class=\"detailTextWhite\">".round($percentage_l)."%</span></span>";

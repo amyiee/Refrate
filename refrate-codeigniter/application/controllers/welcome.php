@@ -19,11 +19,11 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{	
-		$query = $this -> referee_model -> get_records_by_id(1);
+		$query = $this->referee_model->get_records_by_id(1);
+		$query2 = $this->referee_model->getLeagues_by_id(1);
 		$data['records'] = $query;
-		$this->load->view('ref',$data);
-
-		
+		$data['leagues'] = $query2;
+		$this->load->view('ref',$data);		
 	}
 	
 	public function test()
